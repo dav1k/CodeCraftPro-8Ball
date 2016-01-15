@@ -1,3 +1,7 @@
+CodeCraftPro - EightBall
+==========
+This is a tutorial from CodeCraftPro - Ionic: From Web to Mobile course. This is the EightBall mobile app.
+
 Ionic App Base
 =====================
 
