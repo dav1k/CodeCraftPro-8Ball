@@ -23,7 +23,7 @@ app.run(function($ionicPlatform) {
   });
 });
 
-app.controller('PredictionCtrl', function ($scope) {
+app.controller('PredictionCtrl', function ($scope, $timeout) {
 
   var predictionList = [
     "Signs point to yes",
@@ -49,5 +49,18 @@ app.controller('PredictionCtrl', function ($scope) {
   ];
 
   $scope.prediction = "Tap 8Ball for an answer";
+  $scope.answered = true;
+
+  $scope.ask = function() {
+    $scope.answered = false;
+    $scope.prediction = "Asking the Oracle ...";
+    $timeout(function() {
+      $scope.prediction = predictionList[Math.floor(Math.random() * predictionList.length)];
+      $scope.answered = true;
+    }, 2000);
+
+
+
+  };
 
 });

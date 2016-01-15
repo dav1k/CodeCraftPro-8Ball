@@ -20,11 +20,12 @@
 
   <body ng-app="EightBall">
     <ion-pane>
-      <ion-header-bar class="bar-stable">
-        <h1 class="title">Eight Ball</h1>
-      </ion-header-bar>
-
-      <ion-content></ion-content>
+      <ion-content class="ball-center-content padding"
+                   scroll="false"
+                   ng-controller="PredictionCtrl">
+        <img src="img/8ball.png" alt="" class="logo" ng-click="ask()">
+        <p class="prediction" ng-class="{'show':answered}">{{ prediction }}</p>
+      </ion-content>
     </ion-pane>
   </body>
 </html>
